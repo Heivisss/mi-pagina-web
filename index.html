@@ -1,12 +1,399 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi página web</title>
+
+    <title>Inteligencia Artificial</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1d2635;
+            line-height: 1.6;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: linear-gradient(135deg, #101c3c, #3155a6);
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* MENÚ */
+
+        nav {
+            background-color: #0b1228;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #75a7ff;
+        }
+
+        /* PORTADA */
+
+        .hero {
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+
+            background: linear-gradient(
+                rgba(20, 40, 90, 0.9),
+                rgba(40, 80, 160, 0.85)
+            );
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            background-color: white;
+            color: #203b80;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background-color: #dce7ff;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #203b80;
+        }
+
+        section p {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* TARJETAS */
+
+        .tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            width: 280px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .tarjeta h3 {
+            color: #3155a6;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta p {
+            font-size: 16px;
+        }
+
+        /* IMPORTANCIA */
+
+        #importancia {
+            background-color: #e8eefb;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            background-color: #0b1228;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
+    <!-- ENCABEZADO -->
+
+    <header>
+        <h1>INTELIGENCIA ARTIFICIAL</h1>
+        <p>Conociendo la tecnología que está transformando nuestro mundo</p>
+    </header>
+
+
+    <!-- MENÚ -->
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#usos">Usos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#riesgos">Riesgos</a>
+    </nav>
+
+
+    <!-- PORTADA -->
+
+    <section class="hero" id="inicio">
+
+        <h2>El mundo de la Inteligencia Artificial</h2>
+
+        <p>
+            La inteligencia artificial es una de las tecnologías
+            más importantes de nuestra época. Descubre qué es,
+            cómo funciona, sus aplicaciones, beneficios y desafíos.
+        </p>
+
+        <a class="boton" href="#que-es">Comenzar</a>
+
+    </section>
+
+
+    <!-- ¿QUÉ ES? -->
+
+    <section id="que-es">
+
+        <h2>¿Qué es la Inteligencia Artificial?</h2>
+
+        <p>
+            La inteligencia artificial, conocida como IA, es una
+            tecnología que permite desarrollar sistemas capaces de
+            realizar tareas que normalmente requieren capacidades
+            asociadas con la inteligencia humana, como reconocer
+            patrones, comprender información, aprender de datos
+            y generar respuestas.
+        </p>
+
+    </section>
+
+
+    <!-- USOS -->
+
+    <section id="usos">
+
+        <h2>¿Dónde se utiliza?</h2>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+
+                <h3>Educación</h3>
+
+                <p>
+                    Puede ayudar a los estudiantes a investigar,
+                    practicar diferentes temas y encontrar nuevas
+                    formas de aprender.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>Medicina</h3>
+
+                <p>
+                    Puede utilizarse para analizar información médica,
+                    apoyar investigaciones y ayudar a los profesionales
+                    en diferentes procesos.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>Transporte</h3>
+
+                <p>
+                    La IA se utiliza en sistemas de navegación,
+                    análisis del tráfico y desarrollo de vehículos
+                    con tecnologías automatizadas.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>Entretenimiento</h3>
+
+                <p>
+                    Se utiliza en videojuegos, recomendaciones de
+                    contenido, creación digital y diferentes
+                    plataformas de entretenimiento.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFICIOS -->
+
+    <section id="beneficios">
+
+        <h2>Beneficios de la IA</h2>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>Automatización</h3>
+                <p>
+                    Permite realizar determinadas tareas de manera
+                    automática y eficiente.
+                </p>
+            </div>
+
+
+            <div class="tarjeta">
+                <h3>Productividad</h3>
+                <p>
+                    Puede ayudar a organizar información y facilitar
+                    diferentes actividades.
+                </p>
+            </div>
+
+
+            <div class="tarjeta">
+                <h3>Investigación</h3>
+                <p>
+                    Puede ayudar a analizar grandes cantidades de
+                    información y encontrar patrones.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RIESGOS -->
+
+    <section id="riesgos">
+
+        <h2>Riesgos y desafíos</h2>
+
+        <p>
+            La inteligencia artificial también presenta desafíos.
+            Entre ellos están la privacidad de los datos, la
+            desinformación, los sesgos en algunos sistemas y la
+            necesidad de utilizar estas tecnologías de manera
+            responsable y ética.
+        </p>
+
+    </section>
+
+
+    <!-- IMPORTANCIA -->
+
+    <section id="importancia">
+
+        <h2>¿Por qué es importante conocer la IA?</h2>
+
+        <p>
+            Comprender la inteligencia artificial permite aprovechar
+            sus posibilidades de manera responsable. La educación
+            tecnológica ayuda a las personas a conocer tanto sus
+            beneficios como sus limitaciones y riesgos.
+        </p>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            Página educativa sobre Inteligencia Artificial
+        </p>
+
+        <p>
+            © 2026 - Proyecto escolar
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
