@@ -1,305 +1,764 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inteligencia Artificial</title>
+    <title>Inteligencia Artificial | Mundo IA</title>
 
     <style>
 
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fb;
-            color: #1d2635;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff5fa;
+            color: #43283a;
         }
 
-        /* ENCABEZADO */
 
-        header {
-            background: linear-gradient(135deg, #101c3c, #3155a6);
-            color: white;
-            padding: 25px 8%;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* MENÚ */
+        /* =========================
+           MENÚ
+        ========================= */
 
         nav {
-            background-color: #0b1228;
-            padding: 15px;
-            text-align: center;
             position: sticky;
             top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 3px 15px rgba(180, 90, 130, 0.15);
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        .logo {
+            font-size: 25px;
             font-weight: bold;
+            color: #d94f91;
         }
 
-        nav a:hover {
-            color: #75a7ff;
+        .menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
         }
 
-        /* PORTADA */
+        .menu a {
+            text-decoration: none;
+            color: #613d52;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #e44f9b;
+        }
+
+
+        /* =========================
+           PORTADA
+        ========================= */
 
         .hero {
-            min-height: 450px;
+
+            min-height: 90vh;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 50px 20px;
+            justify-content: space-between;
+
+            padding: 70px 10%;
 
             background: linear-gradient(
-                rgba(20, 40, 90, 0.9),
-                rgba(40, 80, 160, 0.85)
+                135deg,
+                #ffe1ef,
+                #ffd0e5,
+                #f8d9ff
             );
-            color: white;
+
+            overflow: hidden;
         }
 
-        .hero h2 {
-            font-size: 48px;
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            color: #c9367e;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            max-width: 700px;
-            font-size: 20px;
+        .hero-text h2 {
+            font-size: 28px;
+            color: #684158;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.7;
             margin-bottom: 30px;
         }
 
         .boton {
-            background-color: white;
-            color: #203b80;
-            padding: 13px 25px;
-            border-radius: 25px;
+
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: #df5798;
+            color: white;
+
             text-decoration: none;
+
+            border-radius: 30px;
+
             font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow: 0 8px 20px rgba(215, 69, 137, 0.3);
         }
 
         .boton:hover {
-            background-color: #dce7ff;
+            transform: translateY(-5px);
+            background: #c9367e;
         }
 
-        /* SECCIONES */
+
+        /* IMAGEN PRINCIPAL */
+
+        .hero-image {
+            width: 42%;
+        }
+
+        .hero-image img {
+
+            width: 100%;
+
+            border-radius: 30px;
+
+            box-shadow: 0 15px 40px rgba(180, 70, 130, 0.25);
+
+            animation: flotar 4s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================= */
 
         section {
-            padding: 70px 10%;
+            padding: 80px 10%;
         }
 
-        section h2 {
+        .titulo {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 25px;
-            color: #203b80;
+            color: #cf3e84;
+            font-size: 38px;
+            margin-bottom: 20px;
         }
 
-        section p {
-            max-width: 900px;
+        .subtitulo {
+            text-align: center;
+            max-width: 800px;
             margin: auto;
-            text-align: center;
             font-size: 18px;
+            line-height: 1.7;
         }
 
-        /* TARJETAS */
+
+        /* =========================
+           TARJETAS
+        ========================= */
 
         .tarjetas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(230px, 1fr));
+
             gap: 25px;
-            margin-top: 40px;
+
+            margin-top: 45px;
         }
 
         .tarjeta {
-            background-color: white;
-            width: 280px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+            0 8px 25px rgba(160, 70, 120, 0.12);
+
+            transition: 0.4s;
+
         }
 
-        .tarjeta h3 {
-            color: #3155a6;
-            margin-bottom: 15px;
+        .tarjeta:hover {
+
+            transform: translateY(-12px);
+
+            box-shadow:
+            0 15px 35px rgba(210, 70, 135, 0.25);
+
         }
 
-        .tarjeta p {
-            font-size: 16px;
+        .tarjeta img {
+
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+
         }
 
-        /* IMPORTANCIA */
+        .tarjeta-contenido {
 
-        #importancia {
-            background-color: #e8eefb;
-        }
-
-        /* PIE DE PÁGINA */
-
-        footer {
-            background-color: #0b1228;
-            color: white;
-            text-align: center;
             padding: 25px;
         }
 
-        /* CELULARES */
+        .tarjeta h3 {
 
-        @media (max-width: 600px) {
+            color: #d74488;
 
-            header h1 {
-                font-size: 30px;
+            margin-bottom: 12px;
+
+            font-size: 22px;
+
+        }
+
+        .tarjeta p {
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           ¿QUÉ ES LA IA?
+        ========================= */
+
+        #que-es {
+
+            background: #fff;
+
+        }
+
+        .contenido {
+
+            max-width: 900px;
+
+            margin: 35px auto 0;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================
+           DATOS
+        ========================= */
+
+        .datos {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+            margin-top: 45px;
+
+        }
+
+        .dato {
+
+            width: 220px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: #ffe3f0;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+
+        }
+
+        .dato:hover {
+
+            transform: scale(1.07);
+
+            background: #ffd0e5;
+
+        }
+
+        .dato span {
+
+            font-size: 45px;
+
+            display: block;
+
+            margin-bottom: 10px;
+
+        }
+
+        .dato h3 {
+
+            color: #c9367e;
+
+        }
+
+
+        /* =========================
+           SECCIÓN INTERACTIVA
+        ========================= */
+
+        .interactiva {
+
+            background:
+            linear-gradient(
+                135deg,
+                #ffe3f0,
+                #f5dcff
+            );
+
+        }
+
+        .pregunta {
+
+            max-width: 700px;
+
+            margin: 40px auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow:
+            0 8px 25px rgba(160, 70, 120, 0.12);
+
+            text-align: center;
+
+        }
+
+        .pregunta button {
+
+            margin: 10px;
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #df5798;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        .pregunta button:hover {
+
+            background: #c9367e;
+
+            transform: scale(1.05);
+
+        }
+
+        #respuesta {
+
+            margin-top: 20px;
+
+            font-weight: bold;
+
+            color: #c9367e;
+
+        }
+
+
+        /* =========================
+           ACORDEÓN
+        ========================= */
+
+        details {
+
+            max-width: 800px;
+
+            margin: 15px auto;
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            box-shadow:
+            0 5px 20px rgba(150, 70, 110, 0.1);
+
+            cursor: pointer;
+
+        }
+
+        summary {
+
+            font-weight: bold;
+
+            color: #cf3e84;
+
+            font-size: 18px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #54243e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px;
+
+        }
+
+        footer strong {
+
+            color: #ff9bc7;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+
             }
 
-            .hero h2 {
-                font-size: 34px;
+            .menu {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
             }
 
-            nav a {
-                display: block;
-                margin: 8px;
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+            .hero-text {
+
+                width: 100%;
+
+            }
+
+            .hero-text h1 {
+
+                font-size: 42px;
+
+            }
+
+            .hero-image {
+
+                width: 90%;
+
+                margin-top: 40px;
+
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ENCABEZADO -->
 
-    <header>
-        <h1>INTELIGENCIA ARTIFICIAL</h1>
-        <p>Conociendo la tecnología que está transformando nuestro mundo</p>
-    </header>
-
-
-    <!-- MENÚ -->
+    <!-- =========================
+         MENÚ
+    ========================= -->
 
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#que-es">¿Qué es?</a>
-        <a href="#usos">Usos</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#riesgos">Riesgos</a>
+
+        <div class="logo">
+            IA♡
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="#inicio">Inicio</a>
+            </li>
+
+            <li>
+                <a href="#que-es">¿Qué es?</a>
+            </li>
+
+            <li>
+                <a href="#usos">Usos</a>
+            </li>
+
+            <li>
+                <a href="#beneficios">Beneficios</a>
+            </li>
+
+            <li>
+                <a href="#interactiva">Interactúa</a>
+            </li>
+
+        </ul>
+
     </nav>
 
 
-    <!-- PORTADA -->
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
 
     <section class="hero" id="inicio">
 
-        <h2>El mundo de la Inteligencia Artificial</h2>
+        <div class="hero-text">
 
-        <p>
-            La inteligencia artificial es una de las tecnologías
-            más importantes de nuestra época. Descubre qué es,
-            cómo funciona, sus aplicaciones, beneficios y desafíos.
-        </p>
+            <h1>Inteligencia Artificial</h1>
 
-        <a class="boton" href="#que-es">Comenzar</a>
+            <h2>El futuro ya está aquí</h2>
+
+            <p>
+
+                Descubre cómo la inteligencia artificial
+                está cambiando nuestra manera de aprender,
+                trabajar, crear y comunicarnos.
+
+            </p>
+
+            <a href="#que-es" class="boton">
+                Explorar IA →
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+            alt="Inteligencia artificial">
+
+        </div>
 
     </section>
 
 
-    <!-- ¿QUÉ ES? -->
+
+    <!-- =========================
+         ¿QUÉ ES?
+    ========================= -->
 
     <section id="que-es">
 
-        <h2>¿Qué es la Inteligencia Artificial?</h2>
+        <h2 class="titulo">
+            ¿Qué es la Inteligencia Artificial?
+        </h2>
 
-        <p>
-            La inteligencia artificial, conocida como IA, es una
-            tecnología que permite desarrollar sistemas capaces de
-            realizar tareas que normalmente requieren capacidades
-            asociadas con la inteligencia humana, como reconocer
-            patrones, comprender información, aprender de datos
-            y generar respuestas.
+        <p class="subtitulo">
+
+            La inteligencia artificial, o IA, es una tecnología
+            que permite crear sistemas capaces de realizar tareas
+            que normalmente requieren capacidades asociadas con
+            la inteligencia humana.
+
         </p>
+
+
+        <div class="contenido">
+
+            La IA puede analizar información, reconocer patrones,
+            procesar lenguaje, generar contenido y aprender a partir
+            de grandes cantidades de datos.
+
+        </div>
 
     </section>
 
 
-    <!-- USOS -->
+
+    <!-- =========================
+         USOS
+    ========================= -->
 
     <section id="usos">
 
-        <h2>¿Dónde se utiliza?</h2>
+        <h2 class="titulo">
+            ¿Dónde encontramos la IA?
+        </h2>
+
+        <p class="subtitulo">
+
+            La inteligencia artificial está presente en muchas
+            actividades de nuestra vida cotidiana.
+
+        </p>
+
 
         <div class="tarjetas">
 
+
             <div class="tarjeta">
 
-                <h3>Educación</h3>
+                <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80"
+                alt="IA en educación">
 
-                <p>
-                    Puede ayudar a los estudiantes a investigar,
-                    practicar diferentes temas y encontrar nuevas
-                    formas de aprender.
-                </p>
+                <div class="tarjeta-contenido">
+
+                    <h3>Educación</h3>
+
+                    <p>
+                        Puede apoyar el aprendizaje, la investigación
+                        y la creación de materiales educativos.
+                    </p>
+
+                </div>
 
             </div>
 
 
+
             <div class="tarjeta">
 
-                <h3>Medicina</h3>
+                <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80"
+                alt="Tecnología en medicina">
 
-                <p>
-                    Puede utilizarse para analizar información médica,
-                    apoyar investigaciones y ayudar a los profesionales
-                    en diferentes procesos.
-                </p>
+                <div class="tarjeta-contenido">
+
+                    <h3>Medicina</h3>
+
+                    <p>
+                        Puede ayudar a analizar información y
+                        apoyar diferentes investigaciones médicas.
+                    </p>
+
+                </div>
 
             </div>
 
 
+
             <div class="tarjeta">
 
-                <h3>Transporte</h3>
+                <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80"
+                alt="Tecnología">
 
-                <p>
-                    La IA se utiliza en sistemas de navegación,
-                    análisis del tráfico y desarrollo de vehículos
-                    con tecnologías automatizadas.
-                </p>
+                <div class="tarjeta-contenido">
+
+                    <h3>Tecnología</h3>
+
+                    <p>
+                        Se utiliza para desarrollar herramientas,
+                        aplicaciones y sistemas inteligentes.
+                    </p>
+
+                </div>
 
             </div>
 
 
+
             <div class="tarjeta">
 
-                <h3>Entretenimiento</h3>
+                <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80"
+                alt="Entretenimiento">
 
-                <p>
-                    Se utiliza en videojuegos, recomendaciones de
-                    contenido, creación digital y diferentes
-                    plataformas de entretenimiento.
-                </p>
+                <div class="tarjeta-contenido">
+
+                    <h3>Entretenimiento</h3>
+
+                    <p>
+                        Se utiliza en videojuegos, recomendaciones,
+                        creación digital y plataformas de contenido.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -308,38 +767,74 @@
     </section>
 
 
-    <!-- BENEFICIOS -->
+
+    <!-- =========================
+         BENEFICIOS
+    ========================= -->
 
     <section id="beneficios">
 
-        <h2>Beneficios de la IA</h2>
+        <h2 class="titulo">
+            Beneficios de la IA
+        </h2>
 
-        <div class="tarjetas">
 
-            <div class="tarjeta">
-                <h3>Automatización</h3>
+        <div class="datos">
+
+
+            <div class="dato">
+
+                <span>⚡</span>
+
+                <h3>Rapidez</h3>
+
                 <p>
-                    Permite realizar determinadas tareas de manera
-                    automática y eficiente.
+                    Puede procesar grandes cantidades de información
+                    rápidamente.
                 </p>
+
             </div>
 
 
-            <div class="tarjeta">
-                <h3>Productividad</h3>
+            <div class="dato">
+
+                <span>💡</span>
+
+                <h3>Creatividad</h3>
+
                 <p>
-                    Puede ayudar a organizar información y facilitar
-                    diferentes actividades.
+                    Puede ayudar a desarrollar ideas y crear
+                    diferentes tipos de contenido.
                 </p>
+
             </div>
 
 
-            <div class="tarjeta">
+            <div class="dato">
+
+                <span>📚</span>
+
+                <h3>Aprendizaje</h3>
+
+                <p>
+                    Puede convertirse en una herramienta de apoyo
+                    para estudiar y aprender.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <span>🔬</span>
+
                 <h3>Investigación</h3>
+
                 <p>
-                    Puede ayudar a analizar grandes cantidades de
-                    información y encontrar patrones.
+                    Puede ayudar a analizar datos y encontrar
+                    patrones.
                 </p>
+
             </div>
 
         </div>
@@ -347,53 +842,170 @@
     </section>
 
 
-    <!-- RIESGOS -->
+
+    <!-- =========================
+         INTERACTIVA
+    ========================= -->
+
+    <section class="interactiva" id="interactiva">
+
+        <h2 class="titulo">
+            ¿Cuánto sabes sobre IA?
+        </h2>
+
+        <p class="subtitulo">
+
+            Responde esta pregunta y descubre si acertaste.
+
+        </p>
+
+
+        <div class="pregunta">
+
+            <h3>
+                ¿Qué significa IA?
+            </h3>
+
+
+            <button onclick="respuestaCorrecta()">
+                Inteligencia Artificial
+            </button>
+
+
+            <button onclick="respuestaIncorrecta()">
+                Información Automática
+            </button>
+
+
+            <button onclick="respuestaIncorrecta()">
+                Internet Avanzado
+            </button>
+
+
+            <p id="respuesta"></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RIESGOS
+    ========================= -->
 
     <section id="riesgos">
 
-        <h2>Riesgos y desafíos</h2>
+        <h2 class="titulo">
+            Riesgos y desafíos
+        </h2>
 
-        <p>
-            La inteligencia artificial también presenta desafíos.
-            Entre ellos están la privacidad de los datos, la
-            desinformación, los sesgos en algunos sistemas y la
-            necesidad de utilizar estas tecnologías de manera
-            responsable y ética.
-        </p>
+
+        <details>
+
+            <summary>
+                Privacidad
+            </summary>
+
+            <p>
+                Es importante proteger los datos personales y
+                comprender cómo son utilizados por las tecnologías.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Desinformación
+            </summary>
+
+            <p>
+                Algunas herramientas pueden generar información
+                incorrecta o contenido que puede resultar engañoso.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Uso responsable
+            </summary>
+
+            <p>
+                La IA debe utilizarse de manera ética, responsable
+                y respetando los derechos de las personas.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Pensamiento crítico
+            </summary>
+
+            <p>
+                Es importante comprobar la información generada por
+                una IA y no aceptar automáticamente todo lo que dice.
+            </p>
+
+        </details>
 
     </section>
 
 
-    <!-- IMPORTANCIA -->
 
-    <section id="importancia">
-
-        <h2>¿Por qué es importante conocer la IA?</h2>
-
-        <p>
-            Comprender la inteligencia artificial permite aprovechar
-            sus posibilidades de manera responsable. La educación
-            tecnológica ayuda a las personas a conocer tanto sus
-            beneficios como sus limitaciones y riesgos.
-        </p>
-
-    </section>
-
-
-    <!-- PIE DE PÁGINA -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         <p>
-            Página educativa sobre Inteligencia Artificial
+            Página educativa sobre
+            <strong>Inteligencia Artificial</strong>
         </p>
 
+        <br>
+
         <p>
-            © 2026 - Proyecto escolar
+            Proyecto escolar • 2026
         </p>
 
     </footer>
 
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function respuestaCorrecta() {
+
+            document.getElementById("respuesta").innerHTML =
+            "¡Correcto! IA significa Inteligencia Artificial.";
+
+        }
+
+
+        function respuestaIncorrecta() {
+
+            document.getElementById("respuesta").innerHTML =
+            "No es correcto. Intenta nuevamente.";
+
+        }
+
+    </script>
+
+
 </body>
 
 </html>
+```
